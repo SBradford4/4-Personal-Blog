@@ -1,5 +1,5 @@
 //change the background theme: dark or light (color from css)
-
+const themeSwitcher = document.querySelector('#theme-switcher');
 const toggleBtn = document.getElementById("toggle")
 // ! Use the following function whenever you need to redirect to a different page
 
@@ -51,11 +51,22 @@ function toggleMode() {
   const circle = document.querySelector(".circle");
   circle.classList.toggle("dark-mode");
   
-  const currentMode = document.body.classList.contains("dark-mode") ? "dark" : "ligit"
+  const currentMode = document.body.classList.contains("dark-mode") ? "dark" : "light"
   localStorage.setItem("theme", currentMode);
 }
+document.addEventListener("DOMContentLoaded", function() {
+  const toggleButton = document.getElementById("theme-toggle-button");
+  if (toggleButton) {
+      toggleButton.addEventListener("click", themeSwitch);
+  }
 
-themeSwitch.addEventListener("click", handleToggle);
+  // Load the saved theme on page load
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+      document.body.classList.add("dark-mode");
+  }})
+
+
 
 // TODO: Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
 // function readLocalStorage(key) {

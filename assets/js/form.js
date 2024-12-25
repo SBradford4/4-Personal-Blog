@@ -2,13 +2,13 @@
 //group entries(object - key pair values) then add it to a list(array)
 //array send it to LS
 ///get it from LS
-//process the list(array) - for loop always to process
+//process the list(array) - for loop always to proc
 
 
 
 // TODO: Create a variable that selects the form element
 const formElement = document.getElementById("blogform")
-const blogLists = [];
+
 
 formElement.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -34,18 +34,27 @@ function formSub() {
     }
     // else {
     //     document.getElementById("error").style.display= "none";
-    const blogPost = {
+    const blogPost = ({
         username: username,
         title: title,
         content: content,
-    };
+    });
     console.log(blogPost);
     
-    // const blogPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
-
-    blogLists.push(blogPost);
-    console.log(blogPosts);
+    let blogList= [] 
+    blogList.push(blogPost)
     
-    localStorage.setItem("blogList", JSON.stringify(blogPosts));
+    let storePost= JSON.parse(localStorage.getItem("blogList"))
+      
+    if (localStorage.getItem("blogList")) {
+        populateStorage();
+    } else {
+        setStyles();
+
+    // const blogPosts = JSON.parse(localStorage.getItem("blogPosts")) || []
+
+    
+    localStorage.setItem("blogList", JSON.stringify(blogList));
     window.location.href = "blog.html";
+    }
 }

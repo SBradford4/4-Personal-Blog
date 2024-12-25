@@ -17,7 +17,8 @@
   <header>
     <!-- TODO: Create landing page elements to match the mock-up provided. At the very least, include the following elements. -->
     <h1>&nbsp;</h1>
-    <button id="toggle">🌒</button>
+    
+    <button onclick="myFunction()">toggledark mode🌒></button>
   </header>
   <main>
 
@@ -26,6 +27,7 @@
     </aside>
     <section>
 
+      <div class = card div>
       <h2>What's on Your Mind?</h2>
 
       <!-- A form element that contains the following: -->
@@ -39,20 +41,22 @@
 
         <label for="title">Title</label><br></br>
         <input type="text" id="title" name="title"><br></br>
-        <label for="content">Content</label><br></br>
+        
 
         <!-- A textarea element whose label and id are `content` -->
+        <label for="content">Content</label>
         <textarea id="content" name="content"></textarea>
 
         <!-- A p element whose id is `error` -->
 
-        <p id="error" style="color: red; display: none;">Please complete the form</p>
+        <p id="error" class="color: red; display: none;">Please complete the form</p>
         <!-- <button type="submit">Submit</button> -->
         <input type="submit" value="Submit">
 
 
       </form>
     </section>
+    
 
   </main>
 
