@@ -7,7 +7,7 @@
 
 // TODO: Create a variable that selects the main element, and a variable that selects the back button element
 const mainEl = document.querySelector("main");
-const backButton = document.querySelector("back-button");
+const backButton = document.querySelector("#back");
 
 // TODO: Create a function that builds an element and appends it to the DOM
 // const blog = document.createElement(blogPosts);
@@ -42,9 +42,10 @@ const blogPosts = [
 // TODO: Create a function called `renderBlogList` that renders the list of blog posts if they exist. If not, call the no posts function.
 function renderBloglist() {
 
-    const blogs = localStorage.getItem('blogPosts')
+    const blogs = localStorage.getItem('blogList')
     const blogLists = JSON.parse(blogs)
-    return blogLists || [];
+    //return blogLists || [];
+    console.log(blogLists)
 
     if (!blogLists.length) {
         noPosts();
@@ -73,11 +74,11 @@ function renderBloglist() {
 
 
 // TODO: Call the `renderBlogList` function
-console.log("Calling renderBlogList with posts:");
-console.log("\nCalling renderBlogList with no posts:");
+//console.log("Calling renderBlogList with posts:");
+//console.log("\nCalling renderBlogList with no posts:");
 
 // TODO: Redirect to the home page using the `redirectPage` function found in logic.js when the back button is clicked
-let backButton1 = document.querySelector("backButton");
+//let backButton = document.querySelector("backButton");
 
 renderBloglist();
 

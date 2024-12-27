@@ -45,16 +45,19 @@ function formSub() {
     blogList.push(blogPost)
     
     let storePost= JSON.parse(localStorage.getItem("blogList"))
+    console.log(storePost)
       
     if (localStorage.getItem("blogList")) {
-        populateStorage();
+        storePost.push(blogPost)
+        localStorage.setItem("blogList", JSON.stringify(storePost));
+       // populateStorage();
     } else {
-        setStyles();
-
+       // setStyles();
+       localStorage.setItem("blogList", JSON.stringify(blogList));
     // const blogPosts = JSON.parse(localStorage.getItem("blogPosts")) || []
 
-    
-    localStorage.setItem("blogList", JSON.stringify(blogList));
+    }
+    //localStorage.setItem("blogList", JSON.stringify(storePost));
     window.location.href = "blog.html";
     }
-}
+
